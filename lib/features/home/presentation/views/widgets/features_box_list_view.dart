@@ -10,9 +10,10 @@ class FeaturesBoxsListView extends StatelessWidget {
       height: MediaQuery.of(context).size.height * .3,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
+        itemCount: 10,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.only(left: 12),
+            padding: const EdgeInsets.only(right: 5),
             child: CustomListViewItem(),
           );
         },

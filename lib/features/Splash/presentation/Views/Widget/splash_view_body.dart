@@ -1,3 +1,4 @@
+import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/features/Splash/presentation/Views/Widget/sliding_logo.dart';
 import 'package:bookly_app/features/Splash/presentation/Views/Widget/sliding_text.dart';
 import 'package:bookly_app/features/home/presentation/views/home_view.dart';
@@ -61,7 +62,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       Get.to(
         HomeView(),
         transition: Transition.fade,
-        duration: Duration(milliseconds: 250),
+        duration: kTranstionDuration,
       );
     });
   }

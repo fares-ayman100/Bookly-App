@@ -4,17 +4,16 @@ import 'package:flutter/rendering.dart';
 
 abstract class Styles {
   static const TextStyle titleMedium = TextStyle(
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: FontWeight.w600,
   );
   static const TextStyle textStyle20 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.normal,
-    fontFamily: kGTSectrafine,
   );
   static const TextStyle textStyle30 = TextStyle(
     fontSize: 30,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w900,
     fontFamily: kGTSectrafine,
   );
   static const TextStyle textStyle14 = TextStyle(

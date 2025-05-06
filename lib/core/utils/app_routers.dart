@@ -12,7 +12,7 @@ abstract class AppRouters {
       GoRoute(path: kHomeView, builder: (context, state) => HomeView()),
       GoRoute(
         path: kBookDetails,
-        builder: (context, state) => BookDetailsView(),
+        builder: (context, state) => BookDetailsView()
       ),
     ],
   );

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 abstract class Styles {
-  static const TextStyle titleMedium = TextStyle(
-    fontSize: 22,
+  static const textStyle18 = TextStyle(
+    fontSize: 18,
     fontWeight: FontWeight.w600,
   );
   static const TextStyle textStyle20 = TextStyle(
@@ -14,7 +14,7 @@ abstract class Styles {
   static const TextStyle textStyle30 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w900,
-    fontFamily: kGTSectrafine,
+    fontFamily: kTagesschrift,
   );
   static const TextStyle textStyle14 = TextStyle(
     fontSize: 14,

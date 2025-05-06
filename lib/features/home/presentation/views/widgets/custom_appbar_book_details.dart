@@ -14,14 +14,15 @@ class CustomAppBarBookDetails extends StatelessWidget {
           onPressed: () {
             GoRouter.of(context).pop();
           },
-          icon: Icon(size: 40, Icons.close),
+          icon: Icon(size: 32, Icons.close),
         ),
 
         IconButton(
           onPressed: () {},
-          icon: Icon(size: 32, FontAwesomeIcons.cartShopping),
+          icon: Icon(size: 25, FontAwesomeIcons.cartShopping),
         ),
       ],
     );
   }
 }
+

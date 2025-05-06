@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/books_action.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/books_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_appbar_book_details.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
@@ -11,7 +12,7 @@ class BookDetailsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
       child: Column(
         children: [
           CustomAppBarBookDetails(),
@@ -19,7 +20,7 @@ class BookDetailsViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: width * .15),
             child: CustomBookImage(),
           ),
-          const SizedBox(height: 43),
+          const SizedBox(height: 35),
           Text(
             'The Jungle Book',
             style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
@@ -29,15 +30,16 @@ class BookDetailsViewBody extends StatelessWidget {
             opacity: .7,
             child: Text(
               'Rudyard Kipling',
-              style: Styles.textStyle18.copyWith(
-                fontStyle: FontStyle.italic,
-              ),
+              style: Styles.textStyle18.copyWith(fontStyle: FontStyle.italic),
             ),
           ),
           const SizedBox(height: 18),
-          BooksRating(mainAxisAlignment: MainAxisAlignment.center)
+          BooksRating(mainAxisAlignment: MainAxisAlignment.center),
+          const SizedBox(height: 37),
+          BooksAction(),
         ],
       ),
     );
   }
 }
+

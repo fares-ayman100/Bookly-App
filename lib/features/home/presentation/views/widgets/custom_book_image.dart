@@ -14,7 +14,7 @@ class CustomBookImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage(AssetsData.test_image),
+            image: AssetImage(AssetsData.testImage),
           ),
         ),
       ),

@@ -10,7 +10,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -26,7 +26,7 @@ class HomeViewBody extends StatelessWidget {
               ],
             ),
           ),
-          SliverFillRemaining(child: BestSellerListViwe())
+          SliverFillRemaining(child: BooksListView())
         ],
       ),
     );

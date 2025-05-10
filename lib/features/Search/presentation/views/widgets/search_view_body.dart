@@ -2,6 +2,7 @@ import 'package:bookly_app/features/Search/presentation/views/widgets/custom_sea
 import 'package:bookly_app/features/Search/presentation/views/widgets/search_list_view_result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
 
@@ -25,4 +26,3 @@ class SearchViewBody extends StatelessWidget {
     );
   }
 }
-

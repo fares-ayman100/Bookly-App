@@ -21,16 +21,19 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(height: 12),
                 FeaturesBooksListView(),
                 SizedBox(height: 40),
-                Text('Best Seller', style: Styles.textStyle18),
+                Text(
+                  'Best Seller',
+                  style: Styles.textStyle20.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 SizedBox(height: 20),
               ],
             ),
           ),
-          SliverFillRemaining(child: BooksListView())
+          SliverFillRemaining(child: BooksListView()),
         ],
       ),
     );
   }
 }
-
-

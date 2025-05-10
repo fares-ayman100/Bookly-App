@@ -25,4 +25,3 @@ class CustomAppBarBookDetails extends StatelessWidget {
     );
   }
 }
-

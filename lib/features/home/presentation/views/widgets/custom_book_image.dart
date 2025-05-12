@@ -5,7 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomBookImage extends StatelessWidget {
-  const CustomBookImage({super.key});
+  const CustomBookImage({super.key, required this.urlImaeg});
+  final String urlImaeg;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class CustomBookImage extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage(AssetsData.testImage),
+              image: NetworkImage(urlImaeg)
             ),
           ),
         ),

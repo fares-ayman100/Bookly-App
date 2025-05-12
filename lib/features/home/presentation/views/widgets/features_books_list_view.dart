@@ -17,11 +17,14 @@ class FeaturesBooksListView extends StatelessWidget {
             height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: 10,
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.only(right: 5),
-                  child: CustomBookImage(),
+                  padding: EdgeInsets.only(right: 20),
+                  child: CustomBookImage(
+                    urlImaeg:
+                        state.books[index].volumeInfo.imageLinks.thumbnail,
+                  ),
                 );
               },
             ),

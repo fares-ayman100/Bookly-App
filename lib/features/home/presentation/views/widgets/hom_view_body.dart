@@ -22,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
                 FeaturesBooksListView(),
                 SizedBox(height: 40),
                 Text(
-                  'Best Seller',
+                  'Newest Books',
                   style: Styles.textStyle20.copyWith(
                     fontWeight: FontWeight.bold,
                   ),

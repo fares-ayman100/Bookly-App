@@ -16,7 +16,7 @@ class NewestBooksListViewItem extends StatelessWidget {
         SizedBox(
           height: 125,
           child: CustomBookImage(
-            urlImaeg: bookModel.volumeInfo.imageLinks.thumbnail,
+            urlImaeg: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
           ),
         ),
         const SizedBox(width: 30),

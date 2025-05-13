@@ -23,7 +23,8 @@ class FeaturesBooksListView extends StatelessWidget {
                   padding: EdgeInsets.only(right: 20),
                   child: CustomBookImage(
                     urlImaeg:
-                        state.books[index].volumeInfo.imageLinks.thumbnail,
+                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                        '',
                   ),
                 );
               },

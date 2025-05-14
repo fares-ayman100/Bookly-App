@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FeaturesBooksListView extends StatelessWidget {
   const FeaturesBooksListView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
@@ -22,6 +21,7 @@ class FeaturesBooksListView extends StatelessWidget {
                 return Padding(
                   padding: EdgeInsets.only(right: 20),
                   child: CustomBookImage(
+                    bookModel: state.books[index],
                     urlImaeg:
                         state.books[index].volumeInfo.imageLinks?.thumbnail ??
                         '',

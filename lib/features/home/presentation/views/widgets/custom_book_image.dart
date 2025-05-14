@@ -5,8 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomBookImage extends StatelessWidget {
-  const CustomBookImage({super.key, required this.urlImaeg});
+  const CustomBookImage({
+    super.key,
+    required this.urlImaeg,
+    required this.bookModel,
+  });
   final String urlImaeg;
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +19,7 @@ class CustomBookImage extends StatelessWidget {
       aspectRatio: 2.6 / 3.1,
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).push(AppRouters.kBookDetails, extra: BookModel);
+          GoRouter.of(context).push(AppRouters.kBookDetails, extra: bookModel);
         },
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
@@ -23,7 +28,7 @@ class CustomBookImage extends StatelessWidget {
             fit: BoxFit.fill,
             errorWidget: (context, url, error) => Icon(Icons.error, size: 34),
           ),
-        )
+        ),
       ),
     );
   }

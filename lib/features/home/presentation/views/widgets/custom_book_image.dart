@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/app_routers.dart';
+import 'package:bookly_app/features/home/data/Model/book_model/book_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -13,7 +14,7 @@ class CustomBookImage extends StatelessWidget {
       aspectRatio: 2.6 / 3.1,
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).push(AppRouters.kBookDetails);
+          GoRouter.of(context).push(AppRouters.kBookDetails, extra: BookModel);
         },
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),

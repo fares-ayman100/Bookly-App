@@ -3,7 +3,6 @@ import 'package:bookly_app/features/home/presentation/views/widgets/newest_selle
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_appbar_home_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/features_books_list_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -17,21 +16,23 @@ class HomeViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomAppBarHomeView(),
-                SizedBox(height: 12),
-                FeaturesBooksListView(),
-                SizedBox(height: 40),
+                const CustomAppBarHomeView(),
+                const SizedBox(height: 12),
+                const FeaturesBooksListView(),
+                const SizedBox(height: 40),
                 Text(
                   'Newest Books',
                   style: Styles.textStyle20.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
               ],
             ),
           ),
-          SliverFillRemaining(child: BooksListView()),
+          const SliverToBoxAdapter(
+            child: BooksListView(),
+          ),
         ],
       ),
     );

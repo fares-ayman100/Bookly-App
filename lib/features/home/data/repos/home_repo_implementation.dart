@@ -32,8 +32,9 @@ class HomeRepoImplementation implements HomeRepo {
   @override
   Future<Either<Failuer, List<BookModel>>> fetchFeautureBook() async {
     try {
+      // Get books from different categories
       var data = await apiServices.get(
-        endPoint: 'volumes?Filtering=free-ebooks&q=subject:programming',
+        endPoint: 'volumes?Filtering=free-ebooks&q=subject:(fiction OR science OR history OR biography)&orderBy=relevance',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {

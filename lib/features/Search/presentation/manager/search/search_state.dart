@@ -17,8 +17,8 @@ class SearchSuccess extends SearchState {
 
 class SearchLoading extends SearchState {}
 
-class SearchFailuer extends SearchState {
+class SearchFailure extends SearchState {
   final String errMessage;
 
-  const SearchFailuer({required this.errMessage});
+  const SearchFailure({required this.errMessage});
 }

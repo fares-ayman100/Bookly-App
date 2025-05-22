@@ -8,15 +8,42 @@ part 'search_state.dart';
 class SearchCubit extends Cubit<SearchState> {
   SearchCubit(this.searchRepo) : super(SearchInitial());
   final SearchRepo searchRepo;
+
+  Future<void> fetchRandomBooks() async {
+    emit(SearchLoading());
+    final response = await searchRepo.searchBook(query: 'popular books');
+    response.fold(
+      (failure) {
+        emit(SearchFailure(errMessage: failure.errMessage));
+      },
+      (books) {
+        if (books.isEmpty) {
+          emit(SearchFailure(errMessage: 'No books found'));
+        } else {
+          emit(SearchSuccess(books: books));
+        }
+      },
+    );
+  }
+
   Future<void> fetchSearchBook(String query) async {
+    if (query.trim().isEmpty) {
+      await fetchRandomBooks();
+      return;
+    }
+
     emit(SearchLoading());
     final response = await searchRepo.searchBook(query: query);
     response.fold(
-      (failuer) {
-        emit(SearchFailuer(errMessage: failuer.errMessage));
+      (failure) {
+        emit(SearchFailure(errMessage: failure.errMessage));
       },
       (books) {
-        emit(SearchSuccess(books: books));
+        if (books.isEmpty) {
+          emit(SearchFailure(errMessage: 'No books found for "$query"'));
+        } else {
+          emit(SearchSuccess(books: books));
+        }
       },
     );
   }

@@ -8,7 +8,7 @@ import 'package:dio/dio.dart';
 class SearchRepoImplementation implements SearchRepo {
   final ApiServices apiServices;
 
-  SearchRepoImplementation({required this.apiServices});
+  SearchRepoImplementation(this.apiServices);
   @override
   Future<Either<Failuer, List<BookModel>>> searchBook({
     required String query,
@@ -17,12 +17,27 @@ class SearchRepoImplementation implements SearchRepo {
       var data = await apiServices.get(
         endPoint: 'volumes?q=$query&filter=free-ebooks&orderBy=newest',
       );
+      
+      if (data == null) {
+        return left(ServerError('No data received from the server'));
+      }
+
+      if (!data.containsKey('items')) {
+        return right([]);
+      }
+
       List<BookModel> books = [];
-      if (data['items'] != null) {
-        for (var book in data['item']) {
-          books.add(BookModel.fromJson(book));
+      var items = data['items'];
+      if (items != null && items is List) {
+        for (var book in items) {
+          try {
+            books.add(BookModel.fromJson(book));
+          } catch (e) {
+            continue;
+          }
         }
       }
+      
       return right(books);
     } catch (e) {
       if (e is DioException) {

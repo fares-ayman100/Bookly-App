@@ -17,9 +17,9 @@ class BooksAction extends StatelessWidget {
           Expanded(
             child: CustomButtom(
               backgroundColor: Colors.white,
-              text: '19.99€',
+              text: 'Free',
               textcolor: Colors.black,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(16),
                 bottomLeft: Radius.circular(16),
               ),
@@ -28,11 +28,16 @@ class BooksAction extends StatelessWidget {
           Expanded(
             child: CustomButtom(
               onPressed: () async {
-                launchCustomerUrl(context, 'bookModel.volumeInfo.previewLink!');
+                if (bookModel.volumeInfo.previewLink != null) {
+                  await launchCustomerUrl(
+                    context,
+                    bookModel.volumeInfo.previewLink!,
+                  );
+                }
               },
-              backgroundColor: Color(0xffEF8262),
+              backgroundColor: const Color(0xffEF8262),
               text: getText(bookModel),
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(12),
                 bottomRight: Radius.circular(12),
               ),
@@ -45,7 +50,7 @@ class BooksAction extends StatelessWidget {
 
   String getText(BookModel bookModel) {
     if (bookModel.volumeInfo.previewLink == null) {
-      return 'Not Avilable';
+      return 'Not Available';
     } else {
       return 'Preview';
     }

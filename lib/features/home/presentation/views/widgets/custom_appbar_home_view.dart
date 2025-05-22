@@ -11,14 +11,14 @@ class CustomAppBarHomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(AssetsData.logo, height: 32),
+        Image.asset(AssetsData.logo, height: 35),
         Spacer(),
         IconButton(
           onPressed: () {
             GoRouter.of(context).push(AppRouters.kSearchView);
           },
           icon: Icon(FontAwesomeIcons.magnifyingGlass),
-          iconSize: 30,
+          iconSize: 25,
         ),
       ],
     );

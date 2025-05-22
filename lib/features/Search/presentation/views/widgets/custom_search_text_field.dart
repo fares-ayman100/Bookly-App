@@ -35,7 +35,7 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
         controller: controller,
         onChanged: _onSearchChanged,
@@ -52,11 +52,11 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
                 if (query.isNotEmpty) {
                   FocusScope.of(
                     context,
-                  ).unfocus(); // ممكن تشيله لو مش عايز الفوكس يروح حتى هنا
+                  ).unfocus();
                   BlocProvider.of<SearchCubit>(context).fetchSearchBook(query);
                 }
               },
-              icon: const Icon(FontAwesomeIcons.magnifyingGlass),
+              icon: const Icon(FontAwesomeIcons.magnifyingGlass, size: 22),
             ),
           ),
         ),

@@ -29,7 +29,6 @@ class _SearchViewBodyState extends State<SearchViewBody> {
             child: Column(
               children: [
                 CustomSearchTextField(),
-                const SizedBox(height: 5),
                 SearchListViewResult(),
               ],
             ),

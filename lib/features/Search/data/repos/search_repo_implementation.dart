@@ -17,10 +17,6 @@ class SearchRepoImplementation implements SearchRepo {
       var data = await apiServices.get(
         endPoint: 'volumes?q=$query&filter=free-ebooks&orderBy=newest',
       );
-      
-      if (data == null) {
-        return left(ServerError('No data received from the server'));
-      }
 
       if (!data.containsKey('items')) {
         return right([]);

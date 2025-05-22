@@ -27,7 +27,6 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
     if (_debounce?.isActive ?? false) _debounce?.cancel();
     _debounce = Timer(const Duration(milliseconds: 500), () {
       if (query.isNotEmpty) {
-        FocusScope.of(context).unfocus();
         BlocProvider.of<SearchCubit>(context).fetchSearchBook(query);
       }
     });
@@ -51,6 +50,9 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
               onPressed: () {
                 final query = controller.text;
                 if (query.isNotEmpty) {
+                  FocusScope.of(
+                    context,
+                  ).unfocus(); // ممكن تشيله لو مش عايز الفوكس يروح حتى هنا
                   BlocProvider.of<SearchCubit>(context).fetchSearchBook(query);
                 }
               },
